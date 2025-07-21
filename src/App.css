@@ -1,38 +1,77 @@
-.App {
-  text-align: center;
+*{
+    margin:0;
+    padding: 0;
+    font-family: Arial,sans-serif;
+    box-sizing: border-box;
+}
+.App{
+   
+    width: 75%;
+    text-align: center;
+    margin: 0 auto;
+    padding: 20px;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+h1{
+    margin-bottom: 20px;
+    background-color: chartreuse;
+    padding: 10px 5px;
+    border: solid black 1px;
+    border-radius: 10px;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+.country-grid{
+    display: grid;
+    grid-template-columns: repeat(auto-fit,minmax(200px,1fr));
+    gap:20px;
+    padding: 10px;
+
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+.country-card{
+    padding: 10px;
+    background-color: lightskyblue;
+    border-radius: 10px;
+    box-shadow: 5px 5px 10px orangered;
+    overflow: hidden;
+    text-align: center;
 }
 
-.App-link {
-  color: #61dafb;
+.country-flag {
+    width:100%;
+    height: 150px;
+    object-fit: cover;
+    box-sizing: 4px;
+    
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.pagination{
+    display: flex;
+    justify-content: center;
+    gap:5px;
+    margin-top: 30px;
+}
+.pagination button{
+    padding: 5px 10px;
+    border: none;
+    border-radius: 5px;
+    margin: 5px;
+    background-color: black;
+    font-size: large;
+    color:white;
+    transition: background-color .2s ease;
+    cursor: pointer;
+}
+.pagination button:hover{
+
+    background-color: midnightblue;
+    color: white;
+}
+
+.pagination .active{
+    background-color: midnightblue;
+    color: white;
+}
+.pagination :disabled{
+    cursor: not-allowed;
 }
