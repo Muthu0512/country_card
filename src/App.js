@@ -32,7 +32,9 @@ function App() {
     //  by using axios  .json () not necessary bcz, axios provide the readable file
 
     (async () => {
-      const response = await axios("https://restcountries.com/v3.1/all");
+      const response = await axios("https://restcountries.com/v3.1/all?fields=name,capital,region,flags,population");
+
+      console.log("Raw response",response)
 
       const rawdata = response.data;
       const countriesData = convertCountryDTO(rawdata);
@@ -65,8 +67,9 @@ function App() {
           flag={flag}
           capital={capital}
           region={region}
-          population={population}
-        ></CountryCard>;
+          population={population}>
+            
+          </CountryCard>;
 
       })}
      </div>
